@@ -1,6 +1,6 @@
 # Doctor RAG Application — Spring AI + H2 + SimpleVectorStore
 
-Application : https://dctrs-assist.online/
+Application : www.dctrs-assist.online
 
 <img width="1917" height="965" alt="image" src="https://github.com/user-attachments/assets/40643273-8477-4a60-a980-b5ba97f85369" />
 
@@ -22,6 +22,7 @@ Application : https://dctrs-assist.online/
 
 <img width="1912" height="907" alt="image" src="https://github.com/user-attachments/assets/a187e6b5-d001-4c21-82a5-2555f8442338" />
 
+<img width="895" height="722" alt="image" src="https://github.com/user-attachments/assets/5df47c7a-c6a7-4787-bd00-7bbf339d61bb" />
 
 
 A complete Retrieval-Augmented Generation (RAG) application built with **Spring Boot 3.3**, **Spring AI 1.0 GA**, **H2** (relational store), and **SimpleVectorStore** (in-memory vector store). Uses Claude Sonnet as the LLM.
