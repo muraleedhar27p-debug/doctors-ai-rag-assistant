@@ -24,6 +24,20 @@
       --font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
       --shadow:0 8px 32px rgba(0,0,0,.5);
     }
+
+    /* ── Light (daylight) theme ─────────────────────────────────────────────── */
+    :root[data-theme="light"] {
+      --bg:#f6f8fa;--bg2:#ffffff;--bg3:#eef1f4;--bg4:#e3e7ec;
+      --border:#d5dbe1;--border2:#e6e9ed;--text:#1c2128;--text2:#57606a;--text3:#8b949e;
+      --accent:#0969da;--accent2:#0969da;--accent-bg:#ddf1ff;
+      --green:#1a7f37;--purple:#8250df;--purple-bg:#f1e9ff;
+      --orange:#bc4c00;--red:#cf222e;--yellow:#9a6700;
+      --shadow:0 8px 32px rgba(140,150,165,.25);
+    }
+    :root[data-theme="light"] .logo { background:linear-gradient(135deg,#0284c7,#4f46e5); }
+    :root[data-theme="light"] .msg.user .bubble { color:#fff; }
+
+    * { transition:background-color .2s ease, border-color .2s ease, color .2s ease; }
     body { font-family:var(--font);background:var(--bg);color:var(--text);display:flex;flex-direction:column;height:100vh;height:calc(var(--vh, 1vh) * 100);height:100dvh;overflow:hidden;-webkit-overflow-scrolling:touch; }
     .app { display:flex;flex-direction:column;height:100vh;height:calc(var(--vh, 1vh) * 100);height:100dvh; }
 
@@ -324,6 +338,9 @@
     <div class="topbar-right">
       <div class="status-dot" id="status-dot"></div>
       <span class="status-label" id="status-label">Connecting…</span>
+      <button class="btn-sm" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+        <i class="ti ti-moon" id="theme-toggle-icon"></i> <span class="btn-label" id="theme-toggle-label">Dark</span>
+      </button>
       <button class="btn-sm" onclick="clearChat()">
         <i class="ti ti-trash"></i> <span class="btn-label">Clear chat</span>
       </button>
@@ -425,6 +442,37 @@
   setVh();
   window.addEventListener('resize', setVh);
   window.addEventListener('orientationchange', () => setTimeout(setVh, 100));
+
+  // ── Light / dark theme ───────────────────────────────────────────────────────
+  const THEME_KEY = 'doctorAppTheme';
+  const THEME_COLORS = { dark: '#0d1117', light: '#f6f8fa' };
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    const icon = document.getElementById('theme-toggle-icon');
+    const label = document.getElementById('theme-toggle-label');
+    if (icon) icon.className = theme === 'dark' ? 'ti ti-moon' : 'ti ti-sun';
+    if (label) label.textContent = theme === 'dark' ? 'Dark' : 'Light';
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.dark);
+  }
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  }
+
+  function initTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'light' || saved === 'dark') {
+      applyTheme(saved);
+    } else {
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      applyTheme(prefersLight ? 'light' : 'dark');
+    }
+  }
+  initTheme();
 
   const BASE = '';
 

@@ -1,30 +1,5 @@
 # Doctor RAG Application — Spring AI + H2 + SimpleVectorStore
 
-Application : www.dctrs-assist.online
-
-<img width="1917" height="965" alt="image" src="https://github.com/user-attachments/assets/40643273-8477-4a60-a980-b5ba97f85369" />
-
-<img width="1912" height="952" alt="image" src="https://github.com/user-attachments/assets/05e54819-760a-4925-8397-c374c14f999e" />
-
-<img width="1912" height="967" alt="image" src="https://github.com/user-attachments/assets/520853ee-462a-44be-a606-8d04cbc48fff" />
-
-<img width="1902" height="967" alt="image" src="https://github.com/user-attachments/assets/e01691d0-b55e-498b-9590-f87edc4acb8e" />
-
-<img width="1896" height="970" alt="image" src="https://github.com/user-attachments/assets/147925f0-57d4-4892-bc61-dc8e795b7a2c" />
-
-<img width="1907" height="901" alt="image" src="https://github.com/user-attachments/assets/9875763b-90cd-421b-a80e-78ae571899a0" />
-
-<img width="1905" height="967" alt="image" src="https://github.com/user-attachments/assets/d4aab228-be9b-42fc-829e-b49681962f2a" />
-
-<img width="1906" height="961" alt="image" src="https://github.com/user-attachments/assets/ba57d0eb-d967-4c85-bf87-898ddf529350" />
-
-<img width="1902" height="912" alt="image" src="https://github.com/user-attachments/assets/2d2a46f5-d469-4ffc-899c-10c467166875" />
-
-<img width="1912" height="907" alt="image" src="https://github.com/user-attachments/assets/a187e6b5-d001-4c21-82a5-2555f8442338" />
-
-<img width="895" height="722" alt="image" src="https://github.com/user-attachments/assets/5df47c7a-c6a7-4787-bd00-7bbf339d61bb" />
-
-
 A complete Retrieval-Augmented Generation (RAG) application built with **Spring Boot 3.3**, **Spring AI 1.0 GA**, **H2** (relational store), and **SimpleVectorStore** (in-memory vector store). Uses Claude Sonnet as the LLM.
 
 ---

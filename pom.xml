@@ -13,7 +13,7 @@
 
     <groupId>com.spring.ai.rag</groupId>
     <artifactId>spring-ai-rag-app</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <name>spring-ai-rag-app</name>
 
     <properties>
